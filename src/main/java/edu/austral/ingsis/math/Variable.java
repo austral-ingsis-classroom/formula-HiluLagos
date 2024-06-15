@@ -1,6 +1,4 @@
-package edu.austral.ingsis.math.operations;
-
-import edu.austral.ingsis.math.Function;
+package edu.austral.ingsis.math;
 
 import java.util.List;
 
