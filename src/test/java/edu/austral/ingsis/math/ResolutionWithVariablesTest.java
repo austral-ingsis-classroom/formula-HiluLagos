@@ -7,6 +7,8 @@ import org.junit.Test;
 
 public class ResolutionWithVariablesTest {
 
+  // Pasar valores de variables a una funsion con variables y resolverla
+
   /** Case 1 + x where x = 3 */
   @Test
   public void shouldResolveFunction1() {

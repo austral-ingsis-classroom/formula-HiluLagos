@@ -1,3 +1,12 @@
 package edu.austral.ingsis.math;
 
-public interface Function {}
+import java.util.List;
+
+public interface Function {
+
+    public Double getResult();
+
+    public String printFunction();
+
+    public List<String> getVariables();
+}

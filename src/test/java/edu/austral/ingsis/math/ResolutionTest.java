@@ -7,6 +7,8 @@ import org.junit.Test;
 
 public class ResolutionTest {
 
+  // Este test evalua una funcion sin variables y retorna el resultado esperado
+
   /** Case 1 + 6 */
   @Test
   public void shouldResolveSimpleFunction1() {

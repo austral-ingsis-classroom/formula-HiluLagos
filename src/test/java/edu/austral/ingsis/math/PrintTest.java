@@ -7,6 +7,8 @@ import org.junit.Test;
 
 public class PrintTest {
 
+  // Este test printea la funcion en un string
+
   /** Case 1 + 6 */
   @Test
   public void shouldPrintFunction1() {

@@ -10,11 +10,19 @@ import org.junit.Test;
 
 public class ListVariablesTest {
 
+
+  // Estos tests usan una funcion para buscar de mi funcion las variables
+  // En el caso devuelve vacio porque no hay, y en el segundo devuelve div porque es la unica variable
+  // En caso de haber muchas da una lista con todas las variables
+
   /** Case 1 + 6 */
   @Test
   public void shouldListVariablesFunction1() {
     final List<String> result = Collections.emptyList();
-
+    // Yo tengo que poner la operacion vista en verde en este test
+    // Usando mi motor implementado uso la funcion para generar un resultado
+    // Y comparo el resultado con el esperado
+    // No tengo que parsear sintaxis, solo programaticamente generar el evaluador de funciones
     assertThat(result, empty());
   }
 
