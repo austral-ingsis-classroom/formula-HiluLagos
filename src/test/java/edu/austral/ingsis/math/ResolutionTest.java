@@ -1,10 +1,15 @@
 package edu.austral.ingsis.math;
 
-import edu.austral.ingsis.math.operations.*;
-import org.junit.jupiter.api.Test;
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
+
+import edu.austral.ingsis.math.operations.Div;
+import edu.austral.ingsis.math.operations.Mod;
+import edu.austral.ingsis.math.operations.Mult;
+import edu.austral.ingsis.math.operations.Pow;
+import edu.austral.ingsis.math.operations.Sub;
+import edu.austral.ingsis.math.operations.Sum;
+import org.junit.jupiter.api.Test;
 
 public class ResolutionTest {
 

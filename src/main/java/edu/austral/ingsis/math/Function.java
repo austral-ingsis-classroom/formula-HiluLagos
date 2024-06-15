@@ -4,9 +4,9 @@ import java.util.List;
 
 public interface Function {
 
-    public Double getResult();
+  public Double getResult();
 
-    public String printFunction();
+  public String printFunction();
 
-    public List<String> getVariables();
+  public List<String> getVariables();
 }

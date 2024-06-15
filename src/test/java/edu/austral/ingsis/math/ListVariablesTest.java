@@ -1,27 +1,29 @@
 package edu.austral.ingsis.math;
 
-import edu.austral.ingsis.math.operations.*;
-import org.junit.jupiter.api.Test;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.empty;
 
-import java.util.Collections;
+import edu.austral.ingsis.math.operations.Div;
+import edu.austral.ingsis.math.operations.Mod;
+import edu.austral.ingsis.math.operations.Mult;
+import edu.austral.ingsis.math.operations.Pow;
+import edu.austral.ingsis.math.operations.Sub;
+import edu.austral.ingsis.math.operations.Sum;
 import java.util.List;
+import org.junit.jupiter.api.Test;
 
 public class ListVariablesTest {
 
-
   // Estos tests usan una funcion para buscar de mi funcion las variables
-  // En el caso devuelve vacio porque no hay, y en el segundo devuelve div porque es la unica variable
+  // En el caso devuelve vacio porque no hay, y en el segundo devuelve div porque es la unica
+  // variable
   // En caso de haber muchas da una lista con todas las variables
 
   // Yo tengo que poner la operacion vista en verde en este test
   // Usando mi motor implementado uso la funcion para generar un resultado
   // Y comparo el resultado con el esperado
   // No tengo que parsear sintaxis, solo programaticamente generar el evaluador de funciones
-
 
   /** Case 1 + 6 */
   @Test
@@ -56,7 +58,8 @@ public class ListVariablesTest {
   /** Case (27 / a) ^ b */
   @Test
   public void shouldListVariablesFunction4() {
-    Function func4 = new Pow(new Div(new Number(27d), new Variable("a", 0d)), new Variable("b", 0d));
+    Function func4 =
+        new Pow(new Div(new Number(27d), new Variable("a", 0d)), new Variable("b", 0d));
 
     final List<String> result = func4.getVariables();
 

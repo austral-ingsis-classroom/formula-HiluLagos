@@ -1,10 +1,15 @@
 package edu.austral.ingsis.math;
 
-import edu.austral.ingsis.math.operations.*;
-import org.junit.jupiter.api.Test;
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
+
+import edu.austral.ingsis.math.operations.Div;
+import edu.austral.ingsis.math.operations.Mod;
+import edu.austral.ingsis.math.operations.Mult;
+import edu.austral.ingsis.math.operations.Pow;
+import edu.austral.ingsis.math.operations.Sub;
+import edu.austral.ingsis.math.operations.Sum;
+import org.junit.jupiter.api.Test;
 
 public class ResolutionWithVariablesTest {
 
@@ -33,7 +38,8 @@ public class ResolutionWithVariablesTest {
   /** Case (9 / x) * y where x = 3 and y = 4 */
   @Test
   public void shouldResolveFunction3() {
-    Function func3 = new Mult(new Div(new Number(9d), new Variable("x", 3d)), new Variable("y", 4d));
+    Function func3 =
+        new Mult(new Div(new Number(9d), new Variable("x", 3d)), new Variable("y", 4d));
 
     final Double result = func3.getResult();
 
@@ -43,7 +49,8 @@ public class ResolutionWithVariablesTest {
   /** Case (27 / a) ^ b where a = 9 and b = 3 */
   @Test
   public void shouldResolveFunction4() {
-    Function func4 = new Pow(new Div(new Number(27d), new Variable("a", 9d)), new Variable("b", 3d));
+    Function func4 =
+        new Pow(new Div(new Number(27d), new Variable("a", 9d)), new Variable("b", 3d));
 
     final Double result = func4.getResult();
 
