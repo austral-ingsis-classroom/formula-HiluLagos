@@ -22,11 +22,17 @@ public class Pow implements Function{
 
     @Override
     public String printFunction() {
-        return base.printFunction() + "^" + exponent.printFunction();
+        String basePrint = isComplex(base) ? "(" + base.printFunction() + ")" : base.printFunction();
+        String exponentPrint = isComplex(exponent) ? "(" + exponent.printFunction() + ")" : exponent.printFunction();
+        return basePrint + " ^ " + exponentPrint;
     }
 
     @Override
     public List<String> getVariables() {
         return new ArrayList<>(base.getVariables());
+    }
+
+    private boolean isComplex(Function function){
+        return function instanceof Sum || function instanceof Div || function instanceof Mult || function instanceof Sub;
     }
 }

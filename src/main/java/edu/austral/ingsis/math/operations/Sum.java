@@ -1,5 +1,6 @@
 package edu.austral.ingsis.math.operations;
 import edu.austral.ingsis.math.Function;
+import edu.austral.ingsis.math.Variable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,9 @@ public class Sum implements Function {
 
     @Override
     public String printFunction() {
-        return left.printFunction() + " + " + right.printFunction();
+        String leftStr = isComplex(left) ? "(" + left.printFunction() + ")" : left.printFunction();
+        String rightStr = isComplex(right) ? "(" + right.printFunction() + ")" : right.printFunction();
+        return leftStr + " + " + rightStr;
     }
 
     @Override
@@ -29,5 +32,9 @@ public class Sum implements Function {
         List<String> result = new ArrayList<>(left.getVariables());
         result.addAll(right.getVariables());
         return result;
+    }
+
+    private boolean isComplex(Function function){
+        return function instanceof Sum || function instanceof Div || function instanceof Mult || function instanceof Sub;
     }
 }

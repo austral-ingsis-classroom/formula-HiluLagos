@@ -17,7 +17,11 @@ public class Number implements Function {
 
     @Override
     public String printFunction() {
-        return value.toString();
+        if (value == Math.floor(value)) {
+            return String.valueOf(value.intValue());
+        } else {
+            return value.toString();
+        }
     }
 
     @Override
