@@ -1,0 +1,65 @@
+@startuml
+
+interface Function{
++Double getResult()
++String printFunction()
++List<String> getVariables()
+}
+
+class Number{
+-double value
+}
+
+class Variable{
+-double numericalValue
+-String stringValue
+}
+
+class Sum{
+-Function left
+-Function right
+-boolean isComplex(Function f)
+}
+
+class Sub{
+-Function left
+-Function right
+-boolean isComplex(Function f)
+}
+
+class Mult{
+-Function left
+-Function right
+-boolean isComplex(Function f)
+}
+
+class Div{
+-Function left
+-Function right
+-boolean isComplex(Function f)
+}
+
+class Pow{
+-Function base
+-Function exponent
+-boolean isComplex(Function f)
+}
+
+class Pow{
+-Function element
+}
+
+class Mod{
+-Function element
+}
+
+Number --|> Function
+Variable --|> Function
+Sum --|> Function
+Sub --|> Function
+Mult --|> Function
+Div --|> Function
+Pow --|> Function
+Mod --|> Function
+
+@enduml
