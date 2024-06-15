@@ -1,5 +1,6 @@
 package edu.austral.ingsis.math;
 
+import edu.austral.ingsis.math.operations.*;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -12,7 +13,9 @@ public class ResolutionTest {
   /** Case 1 + 6 */
   @Test
   public void shouldResolveSimpleFunction1() {
-    final Double result = 7d;
+    Function func1 = new Sum(new Number(1d), new Number(6d));
+
+    final Double result = func1.getResult();
 
     assertThat(result, equalTo(7d));
   }
@@ -20,7 +23,9 @@ public class ResolutionTest {
   /** Case 12 / 2 */
   @Test
   public void shouldResolveSimpleFunction2() {
-    final Double result = 6d;
+    Function func2 = new Div(new Number(12d), new Number(2d));
+
+    final Double result = func2.getResult();
 
     assertThat(result, equalTo(6d));
   }
@@ -28,7 +33,9 @@ public class ResolutionTest {
   /** Case (9 / 2) * 3 */
   @Test
   public void shouldResolveSimpleFunction3() {
-    final Double result = 13.5;
+    Function func3 = new Mult(new Div(new Number(9d), new Number(2d)), new Number(3d));
+
+    final Double result = func3.getResult();
 
     assertThat(result, equalTo(13.5d));
   }
@@ -36,7 +43,9 @@ public class ResolutionTest {
   /** Case (27 / 6) ^ 2 */
   @Test
   public void shouldResolveSimpleFunction4() {
-    final Double result = 20.25;
+    Function func4 = new Pow(new Div(new Number(27d), new Number(6d)), new Number(2d));
+
+    final Double result = func4.getResult();
 
     assertThat(result, equalTo(20.25d));
   }
@@ -44,7 +53,9 @@ public class ResolutionTest {
   /** Case 36 ^ (1/2) */
   @Test
   public void shouldResolveSimpleFunction5() {
-    final Double result = 6d;
+    Function func5 = new Pow(new Number(36d), new Div(new Number(1d), new Number(2d)));
+
+    final Double result = func5.getResult();
 
     assertThat(result, equalTo(6d));
   }
@@ -52,7 +63,9 @@ public class ResolutionTest {
   /** Case |136| */
   @Test
   public void shouldResolveSimpleFunction6() {
-    final Double result = 136d;
+    Function func6 = new Mod(new Number(136d));
+
+    final Double result = func6.getResult();
 
     assertThat(result, equalTo(136d));
   }
@@ -60,7 +73,9 @@ public class ResolutionTest {
   /** Case |-136| */
   @Test
   public void shouldResolveSimpleFunction7() {
-    final Double result = 136d;
+    Function func7 = new Mod(new Number(-136d));
+
+    final Double result = func7.getResult();
 
     assertThat(result, equalTo(136d));
   }
@@ -68,7 +83,9 @@ public class ResolutionTest {
   /** Case (5 - 5) * 8 */
   @Test
   public void shouldResolveSimpleFunction8() {
-    final Double result = 0d;
+    Function func8 = new Mult(new Sub(new Number(5d), new Number(5d)), new Number(8d));
+
+    final Double result = func8.getResult();
 
     assertThat(result, equalTo(0d));
   }

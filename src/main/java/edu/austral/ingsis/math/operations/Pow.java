@@ -29,7 +29,9 @@ public class Pow implements Function{
 
     @Override
     public List<String> getVariables() {
-        return new ArrayList<>(base.getVariables());
+        List<String> result = new ArrayList<>(base.getVariables());
+        result.addAll(exponent.getVariables());
+        return result;
     }
 
     private boolean isComplex(Function function){

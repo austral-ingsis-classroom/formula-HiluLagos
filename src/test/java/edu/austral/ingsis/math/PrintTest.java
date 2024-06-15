@@ -51,7 +51,7 @@ public class PrintTest {
   public void shouldPrintFunction4() {
     final String expected = "(27 / 6) ^ 2";
 
-Function func4 = new Pow(new Div(new Number(27d), new Number(6d)), new Number(2d));
+    Function func4 = new Pow(new Div(new Number(27d), new Number(6d)), new Number(2d));
 
     final String result = func4.printFunction();
 
@@ -75,7 +75,7 @@ Function func4 = new Pow(new Div(new Number(27d), new Number(6d)), new Number(2d
   public void shouldPrintFunction7() {
     final String expected = "|value| - 8";
 
-Function func5 = new Sub(new Mod(new Variable("value", 0)), new Number(8d));
+    Function func5 = new Sub(new Mod(new Variable("value", 0)), new Number(8d));
 
     final String result = func5.printFunction();
 
